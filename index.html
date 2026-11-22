@@ -7,7 +7,20 @@
     <title>Archive of the Russian Opposition</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+function setLanguage(lang) {
+    document.querySelectorAll('[data-en]').forEach(element => {
+        element.textContent = element.getAttribute('data-' + lang);
+    });
 
+    document.documentElement.lang = lang;
+
+    localStorage.setItem('language', lang);
+}
+
+const savedLanguage = localStorage.getItem('language') || 'en';
+setLanguage(savedLanguage);
+</script>
 <body>
 
     <header>
@@ -16,9 +29,14 @@
         </div>
 
         <nav>
-            <a href="index.html">Home / Главная</a>
-            <a href="#documents">Documents / Документы</a>
-            <a href="#about">About / О проекте</a>
+    <a href="index.html" data-en="Home" data-ru="Главная">Home</a>
+    <a href="#documents" data-en="Documents" data-ru="Документы">Documents</a>
+    <a href="#about" data-en="About" data-ru="О проекте">About</a>
+
+    <div class="language">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('ru')">RU</button>
+    </div>
         </nav>
     </header>
 
