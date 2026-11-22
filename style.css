@@ -199,3 +199,22 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+.language {
+    display: flex;
+    gap: 8px;
+}
+
+.language button {
+    background: transparent;
+    color: #aaaaaa;
+    border: 1px solid #444444;
+    padding: 7px 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.language button:hover {
+    background: #a64d5c;
+    color: white;
+    border-color: #a64d5c;
+}
